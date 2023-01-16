@@ -1,0 +1,29 @@
+===========1=============
+cat > pets.txt
+dogs
+cats
+rats
+
+cat > pack_animals.txt
+horses
+camels
+donkeys
+
+cat pets.txt pack_animals.txt > human_friends.txt
+
+nano human_friends.txt 
+
+===========2===========
+
+mkdir final_ex
+
+mv human_friends.txt final_ex/
+
+==========3============
+
+Выполнил все по: https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#apt-repo-fresh-install
+
+==========4============
+
+sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+

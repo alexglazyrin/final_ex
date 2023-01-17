@@ -1,0 +1,54 @@
+=======7=============
+REATE DATABASE human_friends;
+USE human_friends;
+
+=======8==============
+
+
+CREATE TABLE animal(id INT PRIMARY KEY, class VARCHAR(64));
+
+INSERT into animal VALUES (1, 'Домашние животные'), (2, 'Вьючные животные');
+
+CREATE TABLE pets(id INT PRIMARY KEY, subclass VARCHAR(25));
+CREATE TABLE pack_animals( id INT PRIMARY KEY, subclass VARCHAR(25) );
+
+INSERT INTO pets VALUES (1, 'cats'), (2, 'dogs'), (3, 'rats');
+INSERT INTO pack_animals  VALUES (1, 'horses'), (2, 'camels'), (3, 'donkeys');
+
+========9============
+
+СREATE TABLE horses( id INT PRIMARY KEY, name VARCHAR(30), birthday DATE, commands VARCHAR(100));
+INSERT INTO horses VALUES (1, 'Apple', '2009-10-03', 'com1, com2, com3');
+INSERT INTO horses VALUES (2, 'Pinapple', '2019-01-17', 'com2, com5, com7');
+INSERT INTO horses VALUES (3, 'Peach', '2020-07-19', 'com1, com2');
+
+CREATE TABLE camels( id INT PRIMARY KEY, name VARCHAR(30), birthday DATE, commands VARCHAR(100));
+CREATE TABLE donkeys( id INT PRIMARY KEY, name VARCHAR(30), birthday DATE, commands VARCHAR(100));
+
+INSERT INTO camels VALUES (1, 'camelname1', '2001-07-11', 'c1, c2, c3, c4'),(2, 'camelname2', '2005-09-12', 'c21, c3, c4, c8'),(3, 'camelname3', '2010-02-14', 'c2, c4, c5, c4'),(4, 'camelname4', '2019-12-11', 'c1, c2, c3') ;
+INSERT INTO donkeys VALUES (1, 'donkeyname1', '2002-09-11', 'c1, c2'),(2, 'donkeyname2', '2009-12-11', 'c1, c2, c3') ;
+
+CREATE TABLE cats( id INT PRIMARY KEY, name VARCHAR(30), birthday DATE, commands VARCHAR(100));
+CREATE TABLE dogs( id INT PRIMARY KEY, name VARCHAR(30), birthday DATE, commands VARCHAR(100));
+CREATE TABLE rats( id INT PRIMARY KEY, name VARCHAR(30), birthday DATE, commands VARCHAR(100));
+
+INSERT INTO cats VALUES (1, 'catname1', '2001-07-11', 'c1, c2, c3, c4'),(2, 'catname2', '2005-09-12', 'c21, c3, c4, c8'),(3, 'catname3', '2010-02-14', 'c2, c4, c5, c4'),(4, 'catname4', '2019-12-11', 'c1, c2, c3') ;
+INSERT INTO dogs VALUES (1, 'dogname1', '2011-08-19', 'c2, c3, c4, c5'),(2, 'dogname2', '2007-10-11', 'c22, c23, c24, c28'),(3, 'dogname3', '2011-05-11', 'c3, c22, c25');
+INSERT INTO rats VALUES (1, 'ratname1', '2022-01-12', 'c1');
+
+===========10==============
+
+DELETE FROM camels;
+
+CREATE TABLE hANDd LIKE horses;
+ALTER TABLE hANDd DROP id;
+INSERT hANDd SELECT name, birthday, commands FROM horses;
+INSERT hANDd SELECT name, birthday, commands FROM donkeys;
+
+(SELECT name, birthday, commands FROM horses 
+    -> UNION
+    -> SELECT name, birthday, commands FROM donkeys;)
+=========11=============
+SELECT * FROM horsesANDdonkeys WHERE DATE(birthday) > "2019-01-17" ORDER
+
+BY birthday ASC;
